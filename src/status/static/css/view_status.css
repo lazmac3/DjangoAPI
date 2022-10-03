@@ -1,0 +1,17 @@
+
+body {
+ padding-left: 80px; /* Moves the data 15px to the left */
+ background-color: rgb(235, 224, 220);
+}
+h1{ /* Change font and color in the headers */
+ color: #C25100; /* h1 and h2 header color */
+ font-family: 'Verdana'; /* Change font to Verdana */
+} 
+h2 { /* Change font and color in the headers */
+    color: #db6d1f; /* h1 and h2 header color */
+    font-family: 'Verdana'; /* Change font to Verdana */
+   } 
+div { /* Change font and color in the headers */
+    color: #080808; /* h1 and h2 header color */
+    font-family: 'Verdana'; /* Change font to Verdana */
+} 

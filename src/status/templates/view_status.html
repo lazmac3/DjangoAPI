@@ -1,0 +1,56 @@
+{% load static %}
+<html>
+   <head>
+      <link rel="stylesheet"
+         href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet"
+         href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstraptheme.min.css">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/view_status.css' %}">
+   </head>
+   <body>
+      <h1> Welcome to Piazza!! </h1>
+      <p>
+      <div>
+         <h2>Who's online</h2>
+         {% for u in users %}
+         <ul>
+            <li>user {{u.username}} id is {{u.id}}</li>
+         </ul>
+         {% endfor %}
+      </div>
+      <h2>What is going on?</h2>
+      {% for s in statuses %}
+      <div>
+         Title: {{s.Title}} <BR>    
+         Body: {{s.status}} <BR>
+         created At: {{s.created_at}} <BR>
+         Topic: {{s.Topic}}<br> 
+         expiry time: {{s.Expiration_Time}}<br>
+         expired: {{s.Expired}}<br>  
+         Posted by {{s.author}}<br>
+         {% for a  in likes %}
+         {% if s == a.status  %}
+         <ul>
+            <li>{{a.users}} likes this</li>
+         </ul>
+         {% endif %}
+         {% endfor %}
+         {% for a  in dislikes %}
+         {% if s == a.status  %}
+         <ul>
+            <li>{{a.users}} does not this</li>
+         </ul>
+         {% endif %}
+         {% endfor %}
+         {% for a  in reactions %}
+         {% if s == a.status  %}
+         <ul>
+            <li>{{a.reaction}} says {{a.comment}}</li>
+         </ul>
+         {% endif %}
+         {% endfor %}
+         <p>
+            {% endfor %}
+      </div>
+   </body>
+</html>
